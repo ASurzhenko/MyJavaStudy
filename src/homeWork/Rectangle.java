@@ -17,7 +17,6 @@ public class Rectangle {
         }
     }
 
-
     public void sidesCalculation() {
 
         for (int i = 0; i < area; i++) {
@@ -30,5 +29,4 @@ public class Rectangle {
             }
         }
     }
-
 }

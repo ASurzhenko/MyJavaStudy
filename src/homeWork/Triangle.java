@@ -6,7 +6,14 @@ package homeWork;
 public class Triangle {
 
     int area;
-    int sideA;
-    int sideB;
+    int sideA = 20;
+    int sideB = 25;
     int sideC;
+
+    public int areaCalculation() {
+
+        int a = (sideA * sideB) / 2;
+
+        return a;
+    }
 }
