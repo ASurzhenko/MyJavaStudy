@@ -5,14 +5,12 @@ package homeWork;
  */
 public class Round {
 
-    int radius;
-    int diametr;
-    int area;
+    int diametr = 45;
 
-    public double diametrCalculation() {
+    public double radiusCalculation() {
 
-        double a = Math.sqrt(area);
+        double radius = diametr / 2;
 
-        return a;
+        return radius;
     }
 }

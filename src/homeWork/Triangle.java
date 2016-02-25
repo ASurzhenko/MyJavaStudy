@@ -5,15 +5,16 @@ package homeWork;
  */
 public class Triangle {
 
-    int area;
-    int sideA = 20;
-    int sideB = 25;
-    int sideC;
+    int sideA = 5;
+    int sideB = 6;
+    int sideC = 7;
 
-    public int areaCalculation() {
+    public double areaCalculation() {
 
-        int a = (sideA * sideB) / 2;
+        double p = (sideA + sideB + sideC) / 2;
+        double s = p * (p - sideA) * (p - sideB) * (p - sideC);
+        double area = Math.sqrt(s);
 
-        return a;
+        return area;
     }
 }

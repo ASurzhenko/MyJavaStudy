@@ -5,28 +5,23 @@ package homeWork;
  */
 public class Rectangle {
 
-    int area;
-    int perimeter;
+    int angle = 90;
+    double length;
+    double width;
+    double perimetr;
+    double area;
 
-    int array[] = new int[area];
+    public void sidesCalculatio() {
 
-    public void init() {
+        double a = 1;
+        double b = perimetr / 2;
+        double c = area;
+        double d = (b * b) - (4 * a * c);
 
-        for (int i = 0; i < area; i++) {
-            array[i] = i + 1;
-        }
-    }
+        length = (b + Math.sqrt(d)) / 2;
+        width = (b - Math.sqrt(d)) / 2;
 
-    public void sidesCalculation() {
-
-        for (int i = 0; i < area; i++) {
-            for (int j = 0; j < area; j++) {
-                if ((array[i] + array[j] == perimeter / 2) && (array[i] * array[j] == area)) {
-                    System.out.println("The sides of the rectangle are " + array[i] + " and " + array[j]);
-                    i = area;
-                    break;
-                }
-            }
-        }
+        System.out.println("Length is " + length);
+        System.out.println("Width is " + width);
     }
 }
