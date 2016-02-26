@@ -22,4 +22,18 @@ public class Rectangle {
         System.out.println("Length is " + length);
         System.out.println("Width is " + width);
     }
+
+    public double areaCalculation() {
+
+        double area = length * width;
+
+        return area;
+    }
+
+    public double perimetrCalculation() {
+
+        double perimetr = 2 * (length + width);
+
+        return perimetr;
+    }
 }
