@@ -17,4 +17,11 @@ public class Triangle {
 
         return area;
     }
+
+    public double perimetrCalculation() {
+
+        double perimetr = sideA + sideB + sideC;
+
+        return perimetr;
+    }
 }

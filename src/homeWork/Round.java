@@ -5,12 +5,20 @@ package homeWork;
  */
 public class Round {
 
-    int diametr = 45;
+    int diametr = 46;
 
     public double radiusCalculation() {
 
         double radius = diametr / 2;
 
         return radius;
+    }
+
+    public double perimetrCalculation() {
+
+        double perimetr = 2 * Math.PI * radiusCalculation();
+
+        return perimetr;
+
     }
 }
