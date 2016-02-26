@@ -16,6 +16,10 @@ public class VetClinic {
 
         String name = catTom.getName();
 
+        catTom.setName("Murzik");
+
+        System.out.println(catTom.getName());
+
         String newName = name.replace('T', 'K');
 
     }

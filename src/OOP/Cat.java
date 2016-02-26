@@ -38,5 +38,9 @@ public class Cat {
         return birthYear;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }
