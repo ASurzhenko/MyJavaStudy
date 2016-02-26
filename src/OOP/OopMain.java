@@ -48,7 +48,6 @@ public class OopMain {
         System.out.println(i.introduce());
         System.out.println(you.introduce());
 
-
     }
 
     private static void equalsExample() {

@@ -5,13 +5,11 @@ package homeWork;
  */
 public class Rectangle {
 
-    int angle = 90;
+    static int angle = 90;
     double length;
     double width;
-    double perimetr;
-    double area;
 
-    public void sidesCalculatio() {
+    public void sidesCalculation(double perimetr, double area) {
 
         double a = 1;
         double b = perimetr / 2;

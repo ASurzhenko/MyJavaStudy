@@ -7,9 +7,9 @@ public class RectangleTask {
     public static void main(String[] args) {
 
         Rectangle a = new Rectangle();
-        a.perimetr = 30;
-        a.area = 56;
+        double perimetr = 30;
+        double area = 56;
 
-        a.sidesCalculatio();
+        a.sidesCalculation(perimetr, area);
     }
 }
