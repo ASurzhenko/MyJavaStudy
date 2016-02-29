@@ -5,7 +5,7 @@ package homeWork;
  */
 public class Round {
 
-    int diametr = 46;
+    private int diametr = 46;
 
     public double radiusCalculation() {
 

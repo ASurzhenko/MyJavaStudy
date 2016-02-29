@@ -6,10 +6,16 @@ package homeWork;
 public class RectangleTask {
     public static void main(String[] args) {
 
-        Rectangle a = new Rectangle();
+        /*Rectangle rectangle = new Rectangle(8, 7);
         double perimetr = 30;
         double area = 56;
 
-        a.sidesCalculation(perimetr, area);
+        rectangle.sidesCalculation(perimetr, area);*/
+
+        RectangleArea area = new RectangleArea(7, 8);
+        area.areaCalculation();
+
+        RectanglePerimetr perimetr = new RectanglePerimetr(7, 8);
+        perimetr.perimetrCalculation();
     }
 }

@@ -5,9 +5,9 @@ package homeWork;
  */
 public class Triangle {
 
-    int sideA = 5;
-    int sideB = 6;
-    int sideC = 7;
+    private int sideA = 5;
+    private int sideB = 6;
+    private int sideC = 7;
 
     public double areaCalculation() {
 

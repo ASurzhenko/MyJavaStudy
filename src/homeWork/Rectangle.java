@@ -5,9 +5,14 @@ package homeWork;
  */
 public class Rectangle {
 
-    static int angle = 90;
-    double length;
-    double width;
+    private static int angle = 90;
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
 
     public void sidesCalculation(double perimetr, double area) {
 
