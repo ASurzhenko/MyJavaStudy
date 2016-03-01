@@ -5,7 +5,16 @@ package cryptographyTask;
  */
 public class CryptographyMain {
     public static void main(String[] args) {
-        Cryptography data = new Cryptography("Hello world!", 's');
+
+        String message = "Hello World!";
+        char key = 'A';
+
+        String cryptedString = Cryptography.cryptStringWithCharKey(message, key);
+        System.out.println("Crypted string " + message + " - " + cryptedString);
+
+        String decryptedString = Cryptography.cryptStringWithCharKey(cryptedString, key);
+        System.out.println("Decrypted string " + cryptedString + " - " + decryptedString);
 
     }
 }
+

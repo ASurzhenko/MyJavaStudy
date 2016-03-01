@@ -5,20 +5,20 @@ package cryptographyTask;
  */
 public class Cryptography {
 
-    private String message;
-    private char key;
+    public static String cryptStringWithCharKey(String message, char key) {
 
-    public Cryptography(String message, char key) {
-        this.message = message;
-        this.key = key;
+        char[] messageArray = message.toCharArray();
+
+        char[] cryptedMessageArray = new char[messageArray.length];
+
+        for (int i = 0; i < messageArray.length; i++) {
+            cryptedMessageArray[i] = (char) (messageArray[i] ^ key);
+
+        }
+
+        String cryptedString = String.copyValueOf(cryptedMessageArray);
+
+        return cryptedString;
     }
 
-
-
-
-
-
-   /* public static String crypt(String message, char key) {
-
-    }*/
 }
