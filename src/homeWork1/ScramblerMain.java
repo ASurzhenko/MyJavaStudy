@@ -6,14 +6,12 @@ package homeWork1;
 public class ScramblerMain {
     public static void main(String[] args) {
 
-        String message = "Hello";
-        String key = "jfhyd";
+        String message = "Message";
+        String key = "Secret";
         char[] charArrayKey = key.toCharArray();
 
         Scrambler scrambler = new Scrambler(charArrayKey);
 
         System.out.println(scrambler.crypt(message));
-
-
     }
 }
