@@ -5,8 +5,8 @@ package homeWork1;
  */
 public class ImprovedArray {
 
-    String[] array = new String[10];
-    int elementsCounter = 0;
+    private String[] array = new String[10];
+    private int elementsCounter = 0;
 
     public void add(String value) { //добавляет эелементы друг за другом
         if (elementsCounter == array.length) {
