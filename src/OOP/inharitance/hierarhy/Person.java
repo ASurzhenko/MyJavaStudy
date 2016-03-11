@@ -6,6 +6,21 @@ package OOP.inharitance.hierarhy;
 public class Person {
     private String name;
 
+    @Deprecated
+    public Person() {
+
+    }
+
+    /**
+     * this constructor creates person with name
+     * @param name person's name
+     */
+
+    public Person(String name) {
+        this.name = name;
+}
+
+
     public String getName() {
         return name;
     }
@@ -26,6 +41,11 @@ public class Person {
 
         Person other = (Person) o;
         return this.getName().equals(other.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "I'm person, my name is " + getName();
     }
 
 }

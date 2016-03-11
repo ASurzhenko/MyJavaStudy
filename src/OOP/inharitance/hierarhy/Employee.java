@@ -7,6 +7,14 @@ public class Employee extends Person {
 
     protected String position;
 
+    public Employee() {
+        super();
+    }
+
+    public Employee(String name) {
+        super(name);
+    }
+
     public void setPosition(String position) {
         this.position = position;
     }
