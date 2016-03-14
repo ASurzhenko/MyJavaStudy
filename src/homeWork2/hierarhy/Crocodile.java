@@ -3,9 +3,9 @@ package homeWork2.hierarhy;
 /**
  * Created by Александр on 13.03.2016.
  */
-public class Wolf extends Wild {
+public class Crocodile extends Wild {
 
-    public Wolf(boolean isPredator) {
+    public Crocodile(boolean isPredator) {
         super(isPredator);
     }
 }

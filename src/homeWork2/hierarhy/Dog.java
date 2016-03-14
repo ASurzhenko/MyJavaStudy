@@ -5,12 +5,12 @@ package homeWork2.hierarhy;
  */
 public class Dog extends Pet {
 
-    public Dog(String name) {
-        super(name);
+    public Dog(String name, boolean isVactinated) {
+        super(name, isVactinated);
     }
 
     @Override
     public String toString() {
-        return "Hello, my name is " + name + " Woof";
+        return "Hello, my name is " + name + ", Woof";
     }
 }

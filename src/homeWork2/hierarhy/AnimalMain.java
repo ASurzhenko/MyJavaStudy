@@ -7,23 +7,26 @@ public class AnimalMain {
     public static void main(String[] args) {
 
 
-        Pet petCat = new Cat("Murzic");
-        Pet petDog = new Dog("Barbos");
-        Pet petFish = new Fish("Goldi");
-        Pet petHamster = new Hamster("Funtic");
-        Wild wildLion = new Lion();
-        Animal guideDog = new GuideDog();
+        Pet cat = new Cat("Murzic", true);
+        Pet dog = new Dog("Barbos", true);
+        Pet fish = new Fish("Goldi", false);
+        Pet hamster = new Hamster("Funtic", true);
 
-        System.out.println(petCat);
-        System.out.println(petDog);
-        System.out.println(wildLion);
+        Wild giraffe = new Giraffe(false);
+        Wild lion = new Lion(true);
+        Wild wolf = new Wolf(true);
+        Wild crocodile = new Crocodile(true);
 
-        training((isTrained) guideDog);
-        System.out.println(guideDog);
+        GuideDog guideDog = new GuideDog(true);
 
-    }
-
-    public static void training(isTrained trained) {
-        trained.training();
+        System.out.println("Cat: " + cat);
+        System.out.println("Dog: " + dog);
+        System.out.println("Fish: " + fish);
+        System.out.println("Hamster: " + hamster);
+        System.out.println("Giraffe: " + giraffe + ", " + giraffe.isPredator());
+        System.out.println("Lion: " + lion + ", " + lion.isPredator());
+        System.out.println("Wolf: " + wolf + ", " + wolf.isPredator());
+        System.out.println("Crocodile: " + crocodile + ", " + crocodile.isPredator());
+        System.out.println("Guide-dog: " + guideDog.isTrained());
     }
 }

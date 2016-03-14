@@ -5,4 +5,7 @@ package homeWork2.hierarhy;
  */
 public class Lion extends Wild {
 
+    public Lion(boolean isPredator) {
+        super(isPredator);
+    }
 }

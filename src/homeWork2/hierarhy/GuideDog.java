@@ -3,14 +3,18 @@ package homeWork2.hierarhy;
 /**
  * Created by Александр on 13.03.2016.
  */
-public class GuideDog extends Animal {
+public class GuideDog {
 
-    public static void training(isTrained trained) {
-        trained.training();
+    boolean isTrained;
+
+    public GuideDog(boolean isTrained) {
+        this.isTrained = isTrained;
     }
 
-    @Override
-    public String toString() {
-        return "I can take you home";
+    public String isTrained() {
+        if (isTrained) {
+            return "I can take you home";
+        }
+        return "";
     }
 }

@@ -6,13 +6,13 @@ package homeWork2.hierarhy;
 public class Cat extends Pet {
 
 
-    public Cat(String name) {
-        super(name);
+    public Cat(String name, boolean isVactinated) {
+        super(name, isVactinated);
     }
 
     @Override
     public String toString() {
-        return "Hello, my name is " + name + " Meow";
+        return "Hello, my name is " + name + ", Meow";
     }
 
 }
