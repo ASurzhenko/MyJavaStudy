@@ -26,10 +26,23 @@ public class Sorter {
     public static void main(String[] args) {
         int[] a = {9, 3, 6, 1, 7, 4,};
         String[] s = {"a", "b", "e", "c"};
-        new Sorter().sort(s);
+
+        Cat[] cats = new Cat[0];
+
+        Cat cat1 = new Cat("asd", "dfgh", 10);
+
+        Cat cat2 = new Cat("asdasd", "sdasd", 4);
+
+        cat1.compareTo(cat2);
+
+        //new Sorter().sort(s);
+        Arrays.sort(s);
         System.out.println(Arrays.toString(s));
 
         Arrays.sort(a);
         System.out.println(Arrays.toString(a));
+
+        Arrays.sort(cats);
+        System.out.println(Arrays.toString(cats));
     }
 }

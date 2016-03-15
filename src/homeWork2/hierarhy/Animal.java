@@ -5,10 +5,10 @@ package homeWork2.hierarhy;
  */
 public abstract class Animal {
 
-    int id;
-    int age;
-    int weigth;
-    String color;
+    private int id;
+    private int age;
+    private int weigth;
+    private String color;
 
     @Override
     public String toString() {
