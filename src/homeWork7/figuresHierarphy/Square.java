@@ -7,20 +7,14 @@ public class Square extends Figure {
 
     private double a;
     private String name;
-    private String color;
-
-    public String getColor() {
-        return color;
-    }
 
     public String getName() {
         return name;
     }
 
-    public Square(int a, String name, String color) {
+    public Square(int a, String name) {
         this.a = a;
         this.name = name;
-        this.color = color;
     }
 
     @Override
@@ -31,10 +25,5 @@ public class Square extends Figure {
     @Override
     public double areaCalculation() {
         return Math.pow(a, 2);
-    }
-
-    @Override
-    public double colorConsumption(double consumption) {
-        return areaCalculation() * consumption;
     }
 }

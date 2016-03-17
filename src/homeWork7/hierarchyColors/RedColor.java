@@ -5,13 +5,7 @@ package homeWork7.hierarchyColors;
  */
 public class RedColor extends Color {
 
-    private String color;
-    private double consumption;
-
-    public RedColor(String color, int consumption) {
-        this.color = color;
-        this.consumption = consumption;
+    public RedColor(String color, double consumption) {
+        super(color, consumption);
     }
-
-
 }

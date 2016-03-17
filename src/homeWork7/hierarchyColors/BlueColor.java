@@ -5,21 +5,8 @@ package homeWork7.hierarchyColors;
  */
 public class BlueColor extends Color {
 
-    private String color;
-    private double consumption;
-
-    public String getColor() {
-        return color;
-    }
-
-    public double getConsumption() {
-        return consumption;
-    }
-
     public BlueColor(String color, double consumption) {
-        this.color = color;
-        this.consumption = consumption;
+        super(color, consumption);
     }
-
-
 }
+

@@ -5,10 +5,13 @@ package homeWork7.figuresHierarphy;
  */
 public abstract class Figure {
 
+    private String color;
+
+    public String getColor() {
+        return color;
+    }
+
     public abstract double perimetrCalculation();
 
     public abstract double areaCalculation();
-
-    public abstract double colorConsumption(double squareColor);
-
 }
