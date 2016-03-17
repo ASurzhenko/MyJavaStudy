@@ -1,33 +1,36 @@
 package patterns;
 
-import patterns.fly.FlyBehavior;
-import patterns.quack.Quack;
-import patterns.quack.QuackBehavior;
+import patterns.fly.FlyBehaviour;
+import patterns.quack.QuackBehaviour;
+import patterns.swim.SwimBehaviour;
 
 /**
  * Created by User on 15.03.2016.
  */
 public abstract class Duck {
 
-    QuackBehavior quackBehavior;
+    QuackBehaviour quackBehaviour;
 
-    FlyBehavior flyBehavior;
+    FlyBehaviour flyBehaviour;
+
+    SwimBehaviour swimBehaviour;
 
     public void fly() {
-        flyBehavior.fly();
+        flyBehaviour.fly();
     }
 
     public void swim() {
-        System.out.println("I'm swimming");
+        swimBehaviour.swim();
     }
 
     public void quack() {
-        quackBehavior.quack();
+        quackBehaviour.quack();
     }
 
     public abstract void display();
 
-    public void setFlyBehavior() {
-        flyBehavior.fly();
+    public void setFlyBehaviour(FlyBehaviour flyBehaviour) {
+        this.flyBehaviour = flyBehaviour;
     }
+
 }

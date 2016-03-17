@@ -13,9 +13,10 @@ public class DucksMain {
         justDuck.quack();
         justDuck.fly();
 
-        justDuck.setFlyBehavior(new Rocket());
+        justDuck.setFlyBehaviour(new Rocket());
 
         justDuck.fly();
+        justDuck.swim();
     }
 
     public static void duckWork(Duck[] ducks) {

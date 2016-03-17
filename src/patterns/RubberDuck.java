@@ -2,6 +2,7 @@ package patterns;
 
 import patterns.fly.FlyNoWay;
 import patterns.quack.Squick;
+import patterns.swim.SwimNoWay;
 
 /**
  * Created by User on 15.03.2016.
@@ -9,12 +10,12 @@ import patterns.quack.Squick;
 public class RubberDuck extends Duck {
 
     public RubberDuck() {
-        quackBehavior = new Squick();
-        flyBehavior = new FlyNoWay();
+        quackBehaviour = new Squick();
+        flyBehaviour = new FlyNoWay();
+        swimBehaviour = new SwimNoWay();
     }
 
     @Override
-
     public void display() {
         System.out.println("rubber duck");
     }
