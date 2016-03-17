@@ -8,4 +8,7 @@ public abstract class Figure {
     public abstract double perimetrCalculation();
 
     public abstract double areaCalculation();
+
+    public abstract double colorConsumption(double squareColor);
+
 }

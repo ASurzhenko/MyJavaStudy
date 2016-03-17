@@ -27,4 +27,9 @@ public class Rectangle extends Figure {
     public double areaCalculation() {
         return a * b;
     }
+
+    @Override
+    public double colorConsumption(double consumption) {
+        return areaCalculation() * consumption;
+    }
 }
