@@ -2,18 +2,21 @@ package OOP;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Created by User on 11.03.2016.
  */
 public class Sorter {
-    public void sort(Comparable[] unsorted) {
+    public void sort(Object[] unsorted, Comparator comparator) {
         boolean swap = false;
         do {
             swap = false;
             for (int i = 0; i < unsorted.length - 1; i++) {
-                if (unsorted[i].compareTo(unsorted[i + 1]) > 0) {
-                    Comparable temp = unsorted[i];
+
+                if (comparator.compare(unsorted[i], unsorted[i + 1])> 0) {
+                    //if (unsorted[i].compareTo(unsorted[i + 1]) > 0) {
+                    Object temp = unsorted[i];
                     unsorted[i] = unsorted[i + 1];
                     unsorted[i + 1] = temp;
                     swap = true;
@@ -24,25 +27,25 @@ public class Sorter {
 
 
     public static void main(String[] args) {
-        int[] a = {9, 3, 6, 1, 7, 4,};
+        int[] a = {9, 5, 8, 4, 3, 7};
         String[] s = {"a", "b", "e", "c"};
-
         Cat[] cats = new Cat[0];
 
-        Cat cat1 = new Cat("asd", "dfgh", 10);
+        Cat cat1 = new Cat("asd","dfdf", 10);
 
-        Cat cat2 = new Cat("asdasd", "sdasd", 4);
+        Cat cat2 = new Cat("dfd","df", 4);
 
         cat1.compareTo(cat2);
 
-        //new Sorter().sort(s);
-        Arrays.sort(s);
+        Comparator comparator = new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                return 0;
+            }
+        };
+
+        new Sorter().sort(cats, comparator);
         System.out.println(Arrays.toString(s));
 
-        Arrays.sort(a);
-        System.out.println(Arrays.toString(a));
-
-        Arrays.sort(cats);
-        System.out.println(Arrays.toString(cats));
     }
 }
