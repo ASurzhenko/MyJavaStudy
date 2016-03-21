@@ -8,6 +8,10 @@ public class ImprovedArray {
     private Object[] array = new Object[10];
     private int elementsCounter = 0;
 
+    public Object[] getArray() {
+        return array;
+    }
+
     public void add(Object value) { //fills in the elements one by another
         if (elementsCounter == array.length) {
             makeLargerArray();
