@@ -35,7 +35,7 @@ public class CollectionsMain {
         sortedCats.add(new Cat("tom", "grey", 2015));
         sortedCats.add(new Cat("tom", "grey", 2011));
         sortedCats.add(new Cat("tom", "grey", 2013));
-        sortedCats.add(new Cat("Murzic", "grey", 2013));
+        sortedCats.add(new Cat("Murzik", "grey", 2013));
 
         System.out.println("Set: ");
         printForEach(sortedCats);
