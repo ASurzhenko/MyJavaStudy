@@ -19,8 +19,8 @@ public class CustomLinkedListTest {
     public void sizeShouldChangeOnAdd() {
         CustomLinkedList list = new CustomLinkedList();
 
-        list.add(new Object());
-        list.add(new Object());
+        list.add("Tom", "grey", new Object());
+        list.add("Tom", "grey", new Object());
 
         Assert.assertEquals(2, list.size());
     }
@@ -31,8 +31,8 @@ public class CustomLinkedListTest {
 
         Object element = new Object();
 
-        list.add(element);
-        list.add(element);
+        list.add("Tom", "grey", element);
+        list.add("Tom", "grey", element);
 
         Assert.assertEquals(element, list.get(0));
         Assert.assertEquals(element, list.get(1));
