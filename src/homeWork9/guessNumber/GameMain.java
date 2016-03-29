@@ -1,13 +1,15 @@
+/*
 package homeWork9.guessNumber;
 
-import homeWork9.guessNumber.computer.Computer;
-import homeWork9.guessNumber.human.Human;
+import homeWork9.guessNumber.playerWhoGuess.PlayerWhoGuess;
 
 import java.util.Scanner;
 
+*/
 /**
  * Created by Александр on 28.03.2016.
- */
+ *//*
+
 public class GameMain {
     public static void main(String[] args) throws InterruptedException {
 
@@ -19,15 +21,15 @@ public class GameMain {
         System.out.println("Let's play the game Guess Number!");
         System.out.println("Chose the type of game:");
         do {
-            System.out.println("1. Computer will guess the number");
-            System.out.println("2. You will guess the number");
+            System.out.println("1. You will guess the number");
+            System.out.println("2. Computer will guess the number");
             System.out.println("3. Computer will play with computer");
 
             Scanner scanner = new Scanner(System.in);
             choise = scanner.next().charAt(0);
             switch (choise) {
                 case '1':
-                    computerWillGuess(scanner);
+                    humanWillGuess(scanner);
                     break;
                 case '2':
                     System.out.println("Ok. Then think a number between 0 and 100");
@@ -69,9 +71,9 @@ public class GameMain {
 
     }
 
-    private static void computerWillGuess(Scanner scanner) {
+    private static void humanWillGuess(Scanner scanner) {
         int key;
-        Human human = new Human();
+        PlayerWhoGuess human = new PlayerWhoGuess();
         human.setNumberToGuess((int) (Math.random() * 101));
         System.out.println("Ok. Try to guess the number between 0 and 100: ");
 
@@ -82,3 +84,4 @@ public class GameMain {
         } while (key != human.getNumberToGuess());
     }
 }
+*/

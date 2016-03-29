@@ -8,6 +8,10 @@ public abstract class Player {
     protected int numberToGuess;
     protected int tryCounter;
 
+    public void guessTheNumber(int key) {
+
+    }
+
     public int getNumberToGuess() {
         return numberToGuess;
     }

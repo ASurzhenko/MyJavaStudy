@@ -1,11 +1,11 @@
-package homeWork9.guessNumber.human;
+package homeWork9.guessNumber.playerWhoGuess;
 
 import homeWork9.guessNumber.Player;
 
 /**
  * Created by Александр on 29.03.2016.
  */
-public class Human extends Player implements HumanGuesses {
+public class PlayerWhoGuess extends Player {
 
     @Override
     public void guessTheNumber(int key) {
