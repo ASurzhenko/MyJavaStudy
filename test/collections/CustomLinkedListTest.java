@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CustomLinkedListTest {
 
     @Test
-    public void newInstanceShouldBeCreatedEmpty() {
+    public void newInstanceShouldBeCreatedEmpty(){
         CustomLinkedList list = new CustomLinkedList();
 
         Assert.assertEquals(0, list.size());
@@ -26,7 +26,7 @@ public class CustomLinkedListTest {
     }
 
     @Test
-    public void getShouldReturnAppropriateElement() {
+    public void getShouldReturnAppropriateElement(){
         CustomLinkedList list = new CustomLinkedList();
 
         Object element = new Object();
@@ -36,5 +36,6 @@ public class CustomLinkedListTest {
 
         Assert.assertEquals(element, list.get(0));
         Assert.assertEquals(element, list.get(1));
+
     }
 }

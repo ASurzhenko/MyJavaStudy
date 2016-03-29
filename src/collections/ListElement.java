@@ -32,7 +32,7 @@ public class ListElement {
 
     public void add(Object o) {
         if (next == null) {
-            next = new ListElement(0);
+            next = new ListElement(o);
         } else {
             next.add(o);
         }

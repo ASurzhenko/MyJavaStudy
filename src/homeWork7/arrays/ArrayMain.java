@@ -1,13 +1,11 @@
 package homeWork7.arrays;
 
-import java.util.Scanner;
-
 /**
  * Created by Александр on 03.03.2016.
  */
 public class ArrayMain {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         ImprovedArray firstArray = new ImprovedArray();
         ImprovedArray secondArray = new ImprovedArray();
 
@@ -49,6 +47,14 @@ public class ArrayMain {
                 break;
             }
             improvedArray.add(value);
-        } while (!value.equals("end"));
+        } while (!value.equals("end"));*/
+
+        ImprovedArray improvedArray = new ImprovedArray();
+        ImprovedArray improvedArray2 = new ImprovedArray();
+
+        improvedArray.add("cat");
+        improvedArray2.add("cat");
+
+        System.out.println(improvedArray.equals(improvedArray2));
     }
 }

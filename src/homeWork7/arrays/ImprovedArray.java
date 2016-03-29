@@ -51,7 +51,7 @@ public class ImprovedArray {
         }
         return true;
     }
-
+    @Override
     public String toString() { //returns string without null
 
         String goodString = "Our good string: ";

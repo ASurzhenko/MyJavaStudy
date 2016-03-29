@@ -22,15 +22,24 @@ public class SortMain {
 
         Object[] array2 = {8, 3, 1, 9, 34, 77, 11};
 
-        insertSort.sort(array2, new SortComparator());
+        insertSort.sort(array2, new IntegerComparator());
 
         System.out.println("Object Array: " + Arrays.toString(array2));
 
         ImprovedArray improvedArray = new ImprovedArray();
 
-        improvedArray.add("hello");
-        improvedArray.add("you");
+        improvedArray.add("6");
+        improvedArray.add("4");
+        improvedArray.add("7");
         improvedArray.add("apple");
+        improvedArray.add("dfgdfgdfgdfg");
+        improvedArray.add("apple");
+        /*improvedArray.add("dfgd");
+        improvedArray.add("apple");
+        improvedArray.add("1");
+        improvedArray.add("a");*/
+
+        System.out.println(improvedArray.toString());
 
         selectSort.sort(improvedArray.getArray(), new ImprovedArrayComparator());
 
