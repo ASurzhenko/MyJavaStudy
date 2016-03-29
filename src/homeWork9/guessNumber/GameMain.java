@@ -1,23 +1,19 @@
-/*
+
 package homeWork9.guessNumber;
 
-import homeWork9.guessNumber.playerWhoGuess.PlayerWhoGuess;
-
+import java.util.Random;
 import java.util.Scanner;
 
-*/
 /**
  * Created by Александр on 28.03.2016.
- *//*
+ */
 
 public class GameMain {
     public static void main(String[] args) throws InterruptedException {
 
 
         int choise;
-        int key;
-        char answer;
-        int counter = 0;
+
         System.out.println("Let's play the game Guess Number!");
         System.out.println("Chose the type of game:");
         do {
@@ -32,56 +28,45 @@ public class GameMain {
                     humanWillGuess(scanner);
                     break;
                 case '2':
-                    System.out.println("Ok. Then think a number between 0 and 100");
-                    Computer computer = new Computer();
-                    System.out.println("Enter the number: ");
-                    computer.setNumberToGuess(scanner.nextInt());
-                    System.out.println(computer.getNumberToGuess());
-
-                    System.out.println("The number is: ");
-                    int diapasone = 101;
-                    key = (int) (Math.random() * diapasone);
-                    counter++;
-                    while (key != computer.getNumberToGuess()) {
-                        if (key == computer.getNumberToGuess()) {
-                            System.out.println("You guessed! My number is " + computer.getNumberToGuess());
-                            System.out.println("You guessed from try " + counter);
-                        } else {
-                            answer = scanner.next().charAt(0);
-                            if (answer == '>') {
-                                diapasone = key;
-                                key = (int) (Math.random() * (diapasone - key) + (key + 1));
-                                System.out.println(key);
-                                counter++;
-                            } else if (answer == '<') {
-                                int diapasone1 = key;
-                                key = (int) (Math.random() * diapasone);
-                                System.out.println(key);
-                                counter++;
-                            }
-                        }
-
-                    }
+                    computerWillGuessFromHuman(scanner);
                     break;
                 case '3':
+                    computerWillGuessFromComputer();
                     break;
-
             }
         } while (choise != '1' && choise != '2' && choise != '3');
 
     }
 
+    private static void computerWillGuessFromComputer() {
+        Random random = new Random();
+        int key = random.nextInt(101);
+        System.out.println("My number is " + key);
+        PlayerWhoGuess playerWhoGuess = new PlayerWhoGuess();
+        System.out.println(playerWhoGuess.computerGuessTheNumber(key));
+    }
+
+    private static void computerWillGuessFromHuman(Scanner scanner) {
+
+        System.out.println("Think the number between 0 and 100");
+        int key = scanner.nextInt();
+        PlayerWhoGuess playerWhoGuess = new PlayerWhoGuess();
+        System.out.println(playerWhoGuess.computerGuessTheNumber(key));
+
+    }
+
     private static void humanWillGuess(Scanner scanner) {
         int key;
-        PlayerWhoGuess human = new PlayerWhoGuess();
-        human.setNumberToGuess((int) (Math.random() * 101));
+        PlayerWhoThink playerWhoThink = new PlayerWhoThink();
+        PlayerWhoGuess playerWhoGuess = new PlayerWhoGuess();
+        int number = playerWhoThink.numberToGuess();
         System.out.println("Ok. Try to guess the number between 0 and 100: ");
 
         do {
             System.out.println("Enter the number: ");
             key = scanner.nextInt();
-            human.guessTheNumber(key);
-        } while (key != human.getNumberToGuess());
+            playerWhoGuess.humanGuessTheNumber(key, number);
+        } while (key != number);
     }
 }
-*/
+
