@@ -10,6 +10,6 @@ public class Game {
 
         new GameKeeper().startGame(secretKeeper, secretBreaker);
 
-        new GameKeeper().startGame(new HumanSecretKeeper(0, 100), new HumanSecretBreaker(0, 100));
+        //new GameKeeper().startGame(new HumanSecretKeeper(0, 100), new HumanSecretBreaker(0, 100));
     }
 }
