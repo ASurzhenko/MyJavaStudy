@@ -1,5 +1,8 @@
 package patterns.observer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by User on 29.03.2016.
  */
@@ -8,10 +11,15 @@ public class WeatherStation {
     private int humidity;
     private int pressure;
 
+    private List<Observer> observers = new ArrayList<>();
 
-    private CurrentDisplay currentDisplay = new CurrentDisplay();
-    private StatisticDisplay statisticDisplay = new StatisticDisplay();
-    private ForecastDisplay forecastDisplay = new ForecastDisplay();
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
 
     public int getPressure() {
         return pressure;
@@ -38,13 +46,11 @@ public class WeatherStation {
     }
 
     public void stateChanged() {
-        currentDisplay.update(temperature, humidity, pressure);
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
+        /*currentDisplay.update(temperature, humidity, pressure);
         statisticDisplay.update(temperature, humidity, pressure);
-        forecastDisplay.update(temperature, humidity, pressure);
-
-        currentDisplay.display();
-        statisticDisplay.display();
-        forecastDisplay.display();
-
+        forecastDisplay.update(temperature, humidity, pressure);*/
     }
 }

@@ -6,14 +6,15 @@ import java.util.List;
 /**
  * Created by User on 29.03.2016.
  */
-public class StatisticDisplay {
+public class StatisticDisplay implements Observer {
     private List<Integer> temperatures = new ArrayList<Integer>();
     private List<Integer> humidities = new ArrayList<Integer>();
     private List<Integer> pressures = new ArrayList<Integer>();
 
-    public void update(int temperature, int humiditie, int pressure) {
+    @Override
+    public void update(int temperature, int humiditiy, int pressure) {
         temperatures.add(temperature);
-        humidities.add(humiditie);
+        humidities.add(humiditiy);
         pressures.add(pressure);
     }
 
