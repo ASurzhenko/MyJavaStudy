@@ -1,6 +1,6 @@
 package homeWork8.sorter;
 
-import homeWork7.arrays.ImprovedArray;
+import homeWork7Arrays.arrays.ImprovedArray;
 
 import java.util.Arrays;
 

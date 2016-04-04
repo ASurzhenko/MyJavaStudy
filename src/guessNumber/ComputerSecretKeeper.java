@@ -8,12 +8,10 @@ public class ComputerSecretKeeper implements SecretKeeper{
 
     public ComputerSecretKeeper(int from, int to) {
         secretNumber = (int) (Math.random() * (to - from) + from);
-        System.out.println("sectet is:" + secretNumber);
+        System.out.println("secret is: " + secretNumber);
     }
 
-    @Override
-    public int checkNumber(int probableNumber) {
+    public int checkNumber(int probableNumber){
         return Integer.compare(secretNumber, probableNumber);
     }
-
 }
