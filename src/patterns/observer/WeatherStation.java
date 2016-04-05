@@ -47,7 +47,7 @@ public class WeatherStation {
 
     public void stateChanged() {
         for (Observer observer : observers) {
-            observer.update(temperature, humidity, pressure);
+            observer.update(this); // link for itself
         }
         /*currentDisplay.update(temperature, humidity, pressure);
         statisticDisplay.update(temperature, humidity, pressure);
