@@ -1,7 +1,6 @@
 package homeWork7Arrays.arrays;
 
 import java.util.Iterator;
-import java.util.function.Consumer;
 
 /**
  * Created by Александр on 03.03.2016.
@@ -109,11 +108,6 @@ public class ImprovedArray implements MyList, Iterable {
 
     @Override
     public Iterator iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer action) {
-
+        return new ImprovedArrayIterator(this);
     }
 }
