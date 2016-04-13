@@ -1,9 +1,12 @@
 package homeWork7Arrays.arrays;
 
+import java.util.Iterator;
+import java.util.function.Consumer;
+
 /**
  * Created by Александр on 03.03.2016.
  */
-public class ImprovedArray implements MyList {
+public class ImprovedArray implements MyList, Iterable {
 
     private Object[] array = new Object[10];
     private int elementsCounter = 0;
@@ -31,7 +34,7 @@ public class ImprovedArray implements MyList {
     }
 
     @Override
-    public Object get(int index) { //returns the element on index
+    public Object get(int index)  { //returns the element on index
 
         return array[index];
     }
@@ -59,7 +62,7 @@ public class ImprovedArray implements MyList {
     @Override
     public String toString() { //returns string without null
 
-        String goodString = "Our good string: ";
+        String goodString = "";
         for (int i = 0; i < elementsCounter; i++) {
             if (array[i] == null) {
                 continue;
@@ -102,5 +105,15 @@ public class ImprovedArray implements MyList {
             array[i] = this.array[i];
         }
         this.array = array;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer action) {
+
     }
 }
