@@ -1,7 +1,5 @@
 package IO;
 
-import org.omg.PortableInterceptor.DISCARDING;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,6 +10,15 @@ import java.nio.file.Paths;
  */
 public class IoMain {
     public static void main(String[] args) {
+
+        //absoluteAndRelativePaths();
+
+        //uglyPriorJava7Style();
+
+        //copy();
+
+        //readWithCodePage();
+
         try (DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("myFolder/primitives.dat"))) {
             dataOutputStream.writeInt(15);
             dataOutputStream.writeInt(4);
@@ -23,15 +30,14 @@ public class IoMain {
             e.printStackTrace();
         }
 
-        try(DataInputStream dataInputStream = new DataInputStream(new FileInputStream("myFolder/primitives.dat"))) {
+        try (DataInputStream dataInputStream = new DataInputStream(new FileInputStream("myFolder/primitives.dat"))) {
             System.out.println(dataInputStream.readInt());
             System.out.println(dataInputStream.readInt());
             System.out.println(dataInputStream.readInt());
 
             System.out.println(dataInputStream.readInt());
             System.out.println(dataInputStream.readInt());
-
-            //System.out.println(dataInputStream.readLong());
+            //    System.out.println(dataInputStream.readLong());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -46,9 +52,9 @@ public class IoMain {
             while ((value = reader.readLine()) != null) {
                 System.out.println(value);
             }
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,10 +67,6 @@ public class IoMain {
             while ((value = reader.read()) != -1) {
                 System.out.print((char) value);
             }
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,26 +74,32 @@ public class IoMain {
 
     private static void copy() {
         try (InputStream inputStream = new FileInputStream("myFolder/myFile.txt");
-             OutputStream outputStream = new FileOutputStream("myFolder/myFile.txt")) {
+             OutputStream outputStream = new FileOutputStream("myFolder/myFile_copy.txt")) {
             int value;
             while ((value = inputStream.read()) != -1) {
-                System.out.print((char) value);
+                outputStream.write(value);
             }
-        } catch (FileNotFoundException e
-                )
-
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (
-                IOException e
-                )
-
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void tryWithResourses() {
+    private static void tryWithResources() {
+        try (InputStream inputStream = new FileInputStream("myFolder/myFile.txt")) {
+            int value;
+            while ((value = inputStream.read()) != -1) {
+                System.out.print((char) value);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void uglyPriorJava7Style() {
         InputStream inputStream = null;
         try {
             inputStream = new FileInputStream("myFolder/myFile.txt");
@@ -119,13 +127,13 @@ public class IoMain {
         System.out.println("c:\\temp\\myFile.txt");
         System.out.println("/temp/myFile.txt");
 
-        File file = new File("c:\\temp");
+        File file = new File("c:/temp/myFolder");
         System.out.println(file.exists());
         file.mkdirs();
         System.out.println(file.exists());
 
         File relativeFile = new File("myFolder/myFile.txt");
-        System.out.println(relativeFile.getAbsoluteFile());
+        System.out.println(relativeFile.getAbsolutePath());
 
         Path relativePath = Paths.get("myFolder/myFile.txt");
         Path parent = relativePath.getParent();
@@ -144,8 +152,8 @@ public class IoMain {
         }
     }
 
-    public static void someMethodCaller(Integer... integers) {
-        someMethod(1, 2, 3, 4, 3, 2, 2, 1);
+    public static void someMethodCaller() {
+        someMethod(1, 3, 4, 2, 3, 4, 3, 2, 3, 2);
         someMethod();
     }
 
