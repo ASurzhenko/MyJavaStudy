@@ -13,6 +13,8 @@ public class IoMain {
 
         //absoluteAndRelativePaths();
 
+        //tryWithResources();
+
         //uglyPriorJava7Style();
 
         //copy();
