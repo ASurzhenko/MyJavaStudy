@@ -19,6 +19,34 @@ public class CreateFile {
 
         String fileName = scanner.next();
 
+        fileCreating(fileName);
+
+        output(fileName);
+
+        input(fileName);
+    }
+
+    private static void input(String fileName) {
+        try {
+            DataInputStream dataOutputStream = new DataInputStream(new FileInputStream(fileName));
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void output(String fileName) {
+        try {
+            DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(fileName));
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void fileCreating(String fileName) {
         Path path = Paths.get(fileName);
 
         try {
