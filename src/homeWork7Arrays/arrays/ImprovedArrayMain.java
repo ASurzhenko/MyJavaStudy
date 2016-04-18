@@ -19,10 +19,11 @@ public class ImprovedArrayMain {
 
         System.out.println();
 
-        improvedArray.remove(2);
+        improvedArray.remove(3);
 
-        for (Object o : improvedArray) {
-            System.out.print(o + " ");
-        }
+        System.out.println(improvedArray.toString());
+
+        System.out.println(improvedArray.get(3));
+
     }
 }

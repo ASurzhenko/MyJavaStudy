@@ -33,9 +33,13 @@ public class ImprovedArray implements MyList, Iterable {
     }
 
     @Override
-    public Object get(int index)  { //returns the element on index
+    public Object get(int index) { //returns the element on index
 
-        return array[index];
+        try {
+            return array[index];
+        } catch (IndexOutOfBoundsException e) {
+            throw new MyOutOfIndexException("size: " + size() + " index: " + index);
+        }
     }
 
     @Override
@@ -63,9 +67,9 @@ public class ImprovedArray implements MyList, Iterable {
 
         String goodString = "";
         for (int i = 0; i < elementsCounter; i++) {
-            if (array[i] == null) {
+           /* if (array[i] == null) {
                 continue;
-            }
+            }*/
             goodString = goodString + array[i] + " ";
         }
         return goodString;
