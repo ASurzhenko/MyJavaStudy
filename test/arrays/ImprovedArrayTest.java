@@ -1,6 +1,6 @@
 package arrays;
 
-import homeWork7Arrays.arrays.ImprovedArray;
+import homeWork7Collections.arrays.ImprovedArray;
 import org.junit.Assert;
 import org.junit.Test;
 
