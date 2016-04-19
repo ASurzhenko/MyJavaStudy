@@ -1,9 +1,13 @@
 package IO;
 
+import OOP.inharitance.hierarhy.Person;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Properties;
 
 /**
  * Created by User on 15.04.2016.
@@ -11,16 +15,76 @@ import java.nio.file.Paths;
 public class IoMain {
     public static void main(String[] args) {
 
-        //absoluteAndRelativePaths();
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("myFolder/car.dat"))) {
+            Car myCar = new Car("BMW", 1985, new Person("Ivan"));
+            myCar.setRentor(new Rentor("Nikolay"));
+            outputStream.writeObject(myCar);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        //tryWithResources();
+        try(ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("myFolder/car.dat"))) {
+            Car myCar = (Car) inputStream.readObject();
+            System.out.println(myCar);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
-        //uglyPriorJava7Style();
+    private static void propertiesExample() {
+        Properties properties = new Properties();
 
-        //copy();
+        try (FileInputStream inputStream = new FileInputStream("myFolder/settings.properties")) {
+            properties.load(inputStream);
+            String db = properties.getProperty("DB");
+            String password = properties.getProperty("password");
+            int timeout = Integer.parseInt(properties.getProperty("timeout"));
 
-        //readWithCodePage();
+            System.out.println(db + " " + password + " " + timeout);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void objectsExample() {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("myFolder/primitives.dat"))) {
+            int[] date = new int[]{15, 4, 2016};
+            outputStream.writeObject(date);
+            outputStream.writeObject("Hello");
+            outputStream.writeObject(1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("myFolder/primitives.dat"))) {
+            int[] date = (int[]) inputStream.readObject();
+            System.out.println((Arrays.toString(date)));
+
+            String someStr = (String) inputStream.readObject();
+
+            System.out.println(someStr);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*public static Object readSmth() {
+        return new Object();
+    }*/
+
+    private static void primitivesExample() {
         try (DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("myFolder/primitives.dat"))) {
             dataOutputStream.writeInt(15);
             dataOutputStream.writeInt(4);
@@ -89,7 +153,7 @@ public class IoMain {
         }
     }
 
-    private static void tryWithResources() {
+    private static void tryWithResources(String string) {
         try (InputStream inputStream = new FileInputStream("myFolder/myFile.txt")) {
             int value;
             while ((value = inputStream.read()) != -1) {

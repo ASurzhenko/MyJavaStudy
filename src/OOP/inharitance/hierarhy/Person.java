@@ -1,9 +1,11 @@
 package OOP.inharitance.hierarhy;
 
+import java.io.Serializable;
+
 /**
  * Created by User on 04.03.2016.
  */
-public class Person {
+public class Person implements Serializable{
     private String name;
 
     @Deprecated
@@ -21,7 +23,7 @@ public class Person {
      * @param name person's name
      */
 
-    public Person(String name) {
+    public Person (String name) {
         this.name = name;
 }
 

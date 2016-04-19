@@ -27,21 +27,19 @@ public class CreateFile {
     }
 
     private static void input(String fileName) {
-        try {
-            DataInputStream dataOutputStream = new DataInputStream(new FileInputStream(fileName));
-
-
+        try (DataInputStream dataOutputStream = new DataInputStream(new FileInputStream(fileName))) {
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void output(String fileName) {
-        try {
-            DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(fileName));
-
-
+        try (DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(fileName))) {
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
