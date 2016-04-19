@@ -67,9 +67,9 @@ public class ImprovedArray implements MyList, Iterable {
 
         String goodString = "";
         for (int i = 0; i < elementsCounter; i++) {
-           /* if (array[i] == null) {
+            if (array[i] == null) {
                 continue;
-            }*/
+            }
             goodString = goodString + array[i] + " ";
         }
         return goodString;

@@ -25,5 +25,12 @@ public class ImprovedArrayMain {
 
         System.out.println(improvedArray.get(3));
 
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add("fdsfd");
+        myLinkedList.add("fdsf");
+        myLinkedList.add(22);
+
+        System.out.println(myLinkedList.get(5));
+
     }
 }

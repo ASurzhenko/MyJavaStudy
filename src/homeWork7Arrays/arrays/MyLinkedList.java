@@ -1,5 +1,7 @@
 package homeWork7Arrays.arrays;
 
+import exceptions.MyOwnOutOfIndexException;
+
 /**
  * Created by Александр on 31.03.2016.
  */
@@ -21,9 +23,13 @@ public class MyLinkedList implements MyList {
     @Override
     public Object get(int index) {
         if (next == null) {
-            return null;
+            throw new MyOutOfIndexException("size: " + size() + " index: " + index);
         } else {
-            return next.get(index);
+            try {
+                return next.get(index);
+            }catch (IndexOutOfBoundsException e) {
+                throw new MyOwnOutOfIndexException("size: " + size() + " index: " + index);
+            }
         }
     }
 
@@ -51,4 +57,6 @@ public class MyLinkedList implements MyList {
     public void remove(Object obj) {
 
     }
+
+
 }
