@@ -6,10 +6,21 @@ package homeWork7Collections.arrays;
 public class MyHashSetMain {
     public static void main(String[] args) {
 
-        MyHashSat myHashSat = new MyHashSat();
+        MyHashSet myHashSet = new MyHashSet();
 
-        myHashSat.addElement(455);
+        myHashSet.add(0);
+        myHashSet.add(10);
+        myHashSet.add(55);
+        myHashSet.add(1430);
+        myHashSet.add(140);
+        myHashSet.add(11);
+        myHashSet.add(89);
+        myHashSet.add(189);
+        myHashSet.add(8229);
 
-        System.out.println(myHashSat.toString());
+
+        System.out.println(myHashSet.toString());
+        System.out.println(myHashSet.getLoadFactor());
+
     }
 }

@@ -9,6 +9,12 @@ public class MyLinkedList implements MyList {
 
     private MyListElement next;
 
+    @Override
+    public String toString() {
+        return "MyLinkedList{" +
+                "next=" + next +
+                '}';
+    }
 
     @Override
 
@@ -35,7 +41,11 @@ public class MyLinkedList implements MyList {
 
     @Override
     public int size() {
-        return 0;
+        if (next == null) {
+            return 0;
+        } else {
+            return next.size();
+        }
     }
 
     @Override
@@ -57,6 +67,5 @@ public class MyLinkedList implements MyList {
     public void remove(Object obj) {
 
     }
-
 
 }

@@ -35,4 +35,20 @@ public class MyListElement {
 
         }
     }
+
+    @Override
+    public String toString() {
+        return "MyListElement{" +
+                "next=" + next +
+                '}';
+    }
+
+    public int size() {
+        if (next == null) {
+            return 1;
+        } else {
+            return next.size() + 1;
+        }
+    }
+
 }
