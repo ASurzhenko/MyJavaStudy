@@ -9,6 +9,7 @@ import java.util.LinkedList;
 public class MyHashSet {
     private LinkedList[] buckets = new LinkedList[10];
     private double loadFactor;
+    int length = buckets.length;
 
     public double getLoadFactor() {
         return loadFactor;
@@ -32,14 +33,14 @@ public class MyHashSet {
 
     private boolean timeToResize() {
 
-        return loadFactor > (int) (buckets.length * 0.75);
+        return loadFactor > (int) (buckets.length * 0.75); //why cast to int?
     }
 
     public void addElement(Object obj, LinkedList[] buckets) {
 
         int index = indexCalculation(obj);
 
-        if (buckets[index] != null && !buckets[index].contains(obj)) {
+        if (buckets[index] != null && !buckets[index].contains(obj)) { //why != null condition is necessary
 
             buckets[index].add(obj);
             loadFactor++;
@@ -49,7 +50,6 @@ public class MyHashSet {
             buckets[index] = adding;
             loadFactor++;
         }
-
     }
 
     public boolean contains(Object obj) {
@@ -60,6 +60,12 @@ public class MyHashSet {
 
     private int indexCalculation(Object obj) {
         return obj.hashCode() % buckets.length;
+    }
+
+    public boolean remove(Object obj) {
+        int index = indexCalculation(obj);
+
+        return (buckets[index] != null) && buckets[index].remove(obj);
     }
 
     @Override

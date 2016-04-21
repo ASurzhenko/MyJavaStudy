@@ -14,13 +14,22 @@ public class MyHashSetMain {
         myHashSet.add(1430);
         myHashSet.add(140);
         myHashSet.add(11);
-        myHashSet.add(89);
-        myHashSet.add(189);
-        myHashSet.add(8229);
-
+        /*myHashSet.add(89);
+        myHashSet.add(1189);
+        myHashSet.add(28229);
+        myHashSet.add(38229);
+        myHashSet.add(48229);
+        myHashSet.add(58229);
+        myHashSet.add(68229);
+        myHashSet.add(78229);
+        myHashSet.add(88229);
+        myHashSet.add(98229);
+        myHashSet.add(23);*/
 
         System.out.println(myHashSet.toString());
-        System.out.println(myHashSet.getLoadFactor());
 
+        myHashSet.remove(10);
+
+        System.out.println(myHashSet.toString());
     }
 }
