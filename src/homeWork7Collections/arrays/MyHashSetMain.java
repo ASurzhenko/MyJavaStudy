@@ -28,7 +28,7 @@ public class MyHashSetMain {
 
         System.out.println(myHashSet.toString());
 
-        myHashSet.remove(10);
+        myHashSet.remove(3);
 
         System.out.println(myHashSet.toString());
     }
