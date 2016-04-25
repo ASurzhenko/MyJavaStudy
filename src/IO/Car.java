@@ -8,16 +8,16 @@ import java.io.Serializable;
  * Created by User on 19.04.2016.
  */
 public class Car implements Serializable {
-    private static final long serialVersionUID = -6331112598002137663L;
+    private static final long serialVersionUID = 1;
     private String brand;
-    private int year;
     private final Person owner;
+    private int year2;
     private transient Tenant tenant;
 
     public Car(String brand, int year, Person owner) {
         System.out.println("in car constructor with three parameters");
         this.brand = brand;
-        this.year = year;
+        this.year2 = year;
         this.owner = owner;
     }
 
@@ -29,7 +29,7 @@ public class Car implements Serializable {
     public String toString() {
         return "Car{" +
                 "brand='" + brand + '\'' +
-                ", year=" + year +
+                ", year2=" + year2 +
                 ", owner=" + owner +
                 ", tenant=" + tenant +
                 '}';
