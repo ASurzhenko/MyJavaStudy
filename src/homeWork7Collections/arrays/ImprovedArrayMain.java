@@ -6,7 +6,7 @@ package homeWork7Collections.arrays;
 public class ImprovedArrayMain {
     public static void main(String[] args) {
 
-        ImprovedArray improvedArray = new ImprovedArray();
+        /*ImprovedArray improvedArray = new ImprovedArray();
 
         improvedArray.add(45);
         improvedArray.add(4);
@@ -30,7 +30,16 @@ public class ImprovedArrayMain {
         myLinkedList.add("fdsf");
         myLinkedList.add(22);
 
-        System.out.println(myLinkedList.get(5));
+        System.out.println(myLinkedList.get(5));*/
 
+        int array[] = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+            System.out.print(array[i] + " ");
+        }
+
+        BinnarySearch binnarySearch = new BinnarySearch();
+
+        System.out.println(binnarySearch.search(array, 10));
     }
 }
