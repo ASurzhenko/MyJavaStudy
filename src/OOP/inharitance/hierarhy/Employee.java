@@ -29,4 +29,7 @@ public class Employee extends Person {
     }
 
 
+    public String getPosition() {
+        return position;
+    }
 }

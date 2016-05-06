@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.bank;
 
 /**
  * Created by User on 29.04.2016.
@@ -24,7 +24,9 @@ public class Bank {
         if (account1 + account2 != 20_000_000) {
             System.out.println("Something wrong happend!");
         }
-        message += "Accaunt1: " + account1;
+        message += "Accaunt1: " + account1 + "\n";
         message += "Accaunt2: " + account2;
+
+        System.out.println(message);
     }
 }
