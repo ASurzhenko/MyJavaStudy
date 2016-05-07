@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by User on 26.02.2016.
  */
 public class Cat implements Comparable {
-    private String color;
+    protected String color;
     private String name;
     private int birthYear;
     private String[] vaccines = new String[10];

@@ -43,7 +43,6 @@ public class PolimorphysmMain {
             if (object.equals(o)) {
                 return true;
             }
-
         }
         return false;
     }
