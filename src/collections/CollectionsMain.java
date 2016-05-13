@@ -53,7 +53,7 @@ public class CollectionsMain {
 
         System.out.println(list);
 
-        Cat tom = (Cat) list.get(2);
+        Cat tom = list.get(2);
 
         LinkedList<Cat> linkedList = new LinkedList<>();
         linkedList.add(new Cat("tom", "grey", 2015));

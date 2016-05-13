@@ -6,8 +6,8 @@ package multithreading.producerConsumer;
 public class Producer implements Runnable{
     private Bucket bucket;
 
-    public Producer(Bucket backet) {
-        this.bucket = backet;
+    public Producer(Bucket bucket) {
+        this.bucket = bucket;
     }
 
     public void run() {
