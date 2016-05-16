@@ -4,10 +4,7 @@ import OOP.inharitance.hierarhy.Employee;
 import OOP.inharitance.hierarhy.Manager;
 import OOP.inharitance.hierarhy.Person;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by User on 06.05.2016.
@@ -56,6 +53,10 @@ public class GenericsMain {
         copy(employees, new ArrayList<>());
 
         List<Employee> employees1 = copy(managers);
+
+        Collections.emptyList();
+        fire(Collections.singletonList(employee));
+        fire(Collections.<Employee>emptyList());
     }
 
 
