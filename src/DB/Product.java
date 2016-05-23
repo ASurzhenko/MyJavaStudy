@@ -58,7 +58,7 @@ public class Product {
         if (id != product.id) return false;
         if (price != product.price) return false;
         if (name != null ? !name.equals(product.name) : product.name != null) return false;
-        return !(category != null ? !category.equals(product.category) : product.category != null);
+        return category != null ? category.equals(product.category) : product.category == null;
 
     }
 
