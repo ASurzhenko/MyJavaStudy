@@ -85,8 +85,7 @@ public class DbMain {
 
         Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/postgres",
-                "postgres",
-                "postgres");
+                "postgres", "postgres");
 
         DbMain main = new DbMain(connection);
         System.out.println(main.findNameAndPrice());
