@@ -5,26 +5,31 @@ package DB;
  */
 public class DaoMain {
     public static void main(String[] args) {
-        ProductDbDAO productDbDAO = new ProductDbDAO();
-        workWithProducts(productDbDAO);
-
+        DAO<Product> productDAO = new ProductMemoryDAO();
+        productDAO.create(new Product(1, "asdf", "sdf", 234));
+        productDAO.create(new Product(2, "asdf", "sdf", 234));
+        productDAO.create(new Product(3, "asdf", "sdf", 234));
+        productDAO.create(new Product(4, "asdf", "sdf", 234));
+        productDAO.create(new Product(5, "asdf", "sdf", 234));
+        productDAO.create(new Product(6, "asdf", "sdf", 234));
+        workWithProducts(productDAO);
     }
 
-    private static void workWithProducts(ProductDbDAO productDbDAO) {
-        Product product = productDbDAO.findById(3);
+    private static void workWithProducts(DAO<Product> productDAO) {
+        Product product = productDAO.findById(3);
 
-        System.out.println("id = 3: " + product);
+        System.out.println("id = 3:" + product);
 
         product.setName("Crocodile");
 
-        productDbDAO.update(product);
+        productDAO.update(product);
 
-        System.out.println("after croco update: " + productDbDAO.findAll());
+        System.out.println("after croco update: " + productDAO.findAll());
 
-        productDbDAO.delete(product);
+        productDAO.delete(product);
 
-        productDbDAO.create(new Product(5, "Giraffe", "African animal", 555_555));
+        productDAO.create(new Product(5, "Giraffe", "African animal", 555_555));
 
-        System.out.println("after croco delete and giraffe insert: " + productDbDAO.findAll());
+        System.out.println("after croco delete and giraffe insert: " + productDAO.findAll());
     }
 }

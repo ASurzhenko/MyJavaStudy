@@ -8,7 +8,7 @@ import java.util.List;
  * Created by User on 23.05.2016.
  */
 //DAO - Data Access Object
-public class ProductDbDAO {
+public class ProductDbDAO implements DAO<Product> {
     private Connection connection;
 
     public ProductDbDAO() {
@@ -17,15 +17,18 @@ public class ProductDbDAO {
         try {
             connection = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "postgres");
+                    "postgres",
+                    "postgres");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
+    @Override
     public boolean create(Product product) {
-        String sql = " INSERT INTO product (id, name, category, price)" +
-                " VALUES (?, ?, ?, ?)";
+        String sql =
+                " INSERT INTO product (id, name, category, price)" +
+                        " VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, product.getId());
@@ -37,11 +40,13 @@ public class ProductDbDAO {
 
             statement.close();
             return rowsInserted == 1;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
+    @Override
     public List<Product> findAll() {
         try {
             Statement statement = connection.createStatement();
@@ -64,6 +69,7 @@ public class ProductDbDAO {
         }
     }
 
+    @Override
     public Product findById(int id) {
         try {
             Statement statement = connection.createStatement();
@@ -82,16 +88,18 @@ public class ProductDbDAO {
             resultSet.close();
             statement.close();
             return result;
-        } catch (SQLException e) {
+        }catch (SQLException e){
             throw new RuntimeException(e);
         }
     }
 
+    @Override
     public void update(Product product) {
 
         try {
-            String sql = "UPDATE product SET price = ?, name = ?, category = ? " +
-                    " WHERE id = ?";
+            String sql =
+                    "UPDATE product SET price = ?, name = ?, category = ? " +
+                            " WHERE id = ? ";
 
             PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -108,10 +116,11 @@ public class ProductDbDAO {
         }
     }
 
+    @Override
     public void delete(Product product) {
-
         try {
-            String sql = " DELETE FROM product WHERE id = ?";
+            String sql =
+                    "DELETE FROM product WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, product.getId());
 

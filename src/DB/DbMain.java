@@ -81,8 +81,8 @@ public class DbMain {
     }
 
     public void updatePriceByName(String name, int price) throws Exception {
-
-        String sql = "UPDATE product SET price = ? WHERE name = ?";
+        String sql =
+                "UPDATE product SET price = ? WHERE name = ?";
 
         PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -96,8 +96,9 @@ public class DbMain {
     }
 
     public void createProduct(Product product) throws Exception {
-        String sql = " INSERT INTO product (id, name, category, price)" +
-                " VALUES (?, ?, ?, ?)";
+        String sql =
+                " INSERT INTO product (id, name, category, price)" +
+                        " VALUES (?, ?, ?, ?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, product.getId());
         statement.setString(2, product.getName());
@@ -106,15 +107,16 @@ public class DbMain {
 
         int rowsInserted = statement.executeUpdate();
         if (rowsInserted != 0) {
-            System.out.println("Row incerted");
+            System.out.println("Row inserted");
         } else {
-            System.out.println("WARNING! Row has not been inserted!!!");
+            System.out.println("WARNING: Row has not been inserted!!!");
         }
         statement.close();
     }
 
-    public void deleteById(int id) throws Exception {
-        String sql = " DELETE FROM product WHERE id = ?";
+    public void deleteById(int id) throws Exception{
+        String sql =
+                "DELETE FROM product WHERE id = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, id);
 
@@ -129,14 +131,15 @@ public class DbMain {
 
         Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/postgres",
-                "postgres", "postgres");
+                "postgres",
+                "postgres");
 
         DbMain main = new DbMain(connection);
         System.out.println(main.findNameAndPrice());
         System.out.println(main.findAllProducts());
         System.out.println(main.findById(3));
 
-        String s = String.format("my message is %s and %s, but my number is %d", "ASD","QWE", 120);
+        String s = String.format("my message is %s and %s, but my number is %d", "ASD", "QWE", 120);
         System.out.println(s);
 
         main.updatePriceByName("' OR ''='", 9_999_999);
