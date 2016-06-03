@@ -11,10 +11,11 @@ import patterns.factory.factory.PizzaComponentsFactory;
 public class PizzaMain {
     public static void main(String[] args) {
 
-        String stringPizzaType = args[0];
+        String stringPizzaType = "meat";
         PizzaType truePizzaType = PizzaType.of(stringPizzaType);
 
         System.out.println(truePizzaType.getName());
+
 
         PizzaComponentsFactory nyComponentFactory = new NyPizzaComponentFactory();
         PizzaStore nyPizzaStore = new PizzaStore(new NyPizzaFactory(nyComponentFactory));
