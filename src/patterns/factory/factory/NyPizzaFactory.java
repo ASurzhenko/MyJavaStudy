@@ -4,11 +4,6 @@ import patterns.factory.enums.PizzaType;
 import patterns.factory.pizza.NewYorkCheesePizza;
 import patterns.factory.pizza.NewYorkMeatPizza;
 import patterns.factory.pizza.Pizza;
-import patterns.factory.pizza.ingredients.cheese.Mozarella;
-import patterns.factory.pizza.ingredients.cheese.Parmejano;
-import patterns.factory.pizza.ingredients.dough.Thick;
-import patterns.factory.pizza.ingredients.dough.Thin;
-import patterns.factory.pizza.ingredients.proteins.Meat;
 
 /**
  * Created by User on 30.05.2016.

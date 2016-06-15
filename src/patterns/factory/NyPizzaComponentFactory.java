@@ -2,9 +2,7 @@ package patterns.factory;
 
 import patterns.factory.factory.PizzaComponentsFactory;
 import patterns.factory.pizza.ingredients.cheese.Cheese;
-import patterns.factory.pizza.ingredients.cheese.Mozarella;
 import patterns.factory.pizza.ingredients.dough.Dough;
-import patterns.factory.pizza.ingredients.dough.Thick;
 import patterns.factory.pizza.ingredients.dough.Thin;
 import patterns.factory.pizza.ingredients.proteins.Proteins;
 import patterns.factory.pizza.ingredients.proteins.Seafood;
